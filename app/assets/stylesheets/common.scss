@@ -1,0 +1,33 @@
+header, footer {
+    width: 100%;
+    padding: 10px;
+    background: #09b668;
+    color: #fff;
+    margin: 0px;
+}
+
+footer {
+    position: absolute;
+    bottom: 0px;
+}
+
+.main_container {
+    margin: 50px 15px;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+th {
+    background-color: #ffdfdf;
+    border: solid 1px black;
+    padding: 10px 20px;
+}
+
+td {
+    background-color: #f1c8c861;
+    text-align: center;
+    border: solid 1px black;
+    padding: 10px 20px;
+}

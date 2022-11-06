@@ -54,3 +54,8 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+
+#ターミナルでrails s コマンドを実行すると下記のエラーが表示されたため gem "net-smtp" をこのファイルに追加し、ターミナルで bundle install を実行する。
+#You don't have net-smtp installed in your application. Please add it to your Gemfile and run bundle install
+gem "net-smtp"

@@ -1,0 +1,43 @@
+<div class="main_container">
+    <div class="information">
+        <h2>スケジュール一覧</h2>
+    </div>
+    <% if flash[:notice] %>
+        <p class="notice"><%= flash[:notice] %></p>
+    <% end %>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>タイトル</th>
+                <th>開始日</th>
+                <th>終了日</th>
+                <th>終日</th>
+                <th>スケジュール更新日時</th>
+                <th>確認</th>
+                <th>編集</th>
+                <th>削除</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% @users.each do |user| %>
+                <tr>
+                    <td><%= user.id %></td>
+                    <td><%= user.title %></td>
+                    <td><%= user.startday %></td>
+                    <td><%= user.endday %></td>
+                    <td><%= user.shuujitu %></td>
+                    <td><%= user.updated_at.to_s(:datetime_jp) %></td> <%# time_formats.rb フォーマットを .to_s(:datetime_jp) で読み込み %>
+                    <td><%= link_to "確認", user_path(user) %></td>
+                    <%# Userモデルの複数のインスタンスを@usersに持たせているので、Userモデルのインスタンスが入った変数userをuser_pathの引数にする %>
+                    <%# link_to "確認", user_path(user) は link_to "確認", user のように書くことが可能　　 show, update, destroy アクションのように「id」パラメータを指定して呼び出すアクションの場合は、オブジェクト名だけ指定できる(editアクションは除く) %>
+                    <td><%= link_to "編集", edit_user_path(user) %></td>
+                    <td><%= link_to "削除", user_path(user), method: :delete, date: {confirm: "本当に削除しますか？"} %></td>
+                </tr>
+            <% end %>
+        </tbody>
+    </table>
+    <p><%= link_to "スケジュール新規登録", :new_user %></p> <%# 今回はHTTPメソッドはgetであるため第３引数(method: :HTTPメソッドの種類)は省略 %>
+</div>
+
+<%= render "shared/partialFooter" %>
