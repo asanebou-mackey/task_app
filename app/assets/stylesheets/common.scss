@@ -31,3 +31,26 @@ td {
     border: solid 1px black;
     padding: 10px 20px;
 }
+
+.error_message {
+    background-color: #ec98ac8f;
+    border: 2px solid #ec7592;
+    padding: 15px;
+    width: 400px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.notice {
+    background-color: #98ecaa7a;
+    border: 2px solid #5cd075;
+    padding: 15px;
+    width: 400px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+li {
+    list-style: none;
+    padding-left: 0px;
+}

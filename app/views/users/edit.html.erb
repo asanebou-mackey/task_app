@@ -1,5 +1,5 @@
 <h2>スケジュール編集</h2>
-
+<%= render "shared/errorMessage", obj: @user %> <%# バリデーションエラーの際 render "ディレクトリ名/パーシャルのファイル名" で _error.html.erb を呼び出し、エラーメッセージを表示する %>
 <%= form_with model: @user do |f| %>
 <table>
     <tr>
