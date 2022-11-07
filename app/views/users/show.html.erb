@@ -27,8 +27,8 @@
 </table>
 <ul>
     <li><%= link_to "スケジュール一覧に戻る", :users %></li>
-    <li>スケジュールを編集する</li>
-    <li>スケジュールを削除</li>
+    <li><%= link_to "スケジュールを編集する", edit_user_path(@user) %></li>
+    <li><%= link_to "スケジュールを削除", user_path(@user), method: :delete, data: {confirm: "本当に削除しますか？"} %></li>
 </ul>
 
 <%= render "shared/partialFooter" %>
