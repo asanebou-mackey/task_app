@@ -1,0 +1,39 @@
+<h2>スケジュール新規作成</h2>
+<%= render "shared/errorMessage", obj: @user %> <%# バリデーションエラーの際 render "ディレクトリ名/パーシャルのファイル名" で _error.html.erb を呼び出し、エラーメッセージを表示する %>
+<%= form_with model: @user do |f| %>
+<table>
+    <tr>
+        <th><%= f.label :title, "タイトル" %></th>
+        <td><%= f.text_field :title %></td>
+    </tr>
+    <tr>
+        <th><%= f.label :startday, "開始日" %></th>
+        <td><%= f.datetime_field :startday %></td>
+    </tr>
+    <tr>
+        <th><%= f.label :endday, "終了日" %></th>
+        <td><%= f.datetime_field :endday %></td>
+    </tr>
+    <tr>
+        <th><%= f.label :shuujitu, "終日" %></th>
+        <td><%= f.check_box :shuujitu, {}, checked_value = "◯", unchecked_value = "" %></td>
+    </tr>
+    <tr>
+        <th><%= f.label :memo, "スケジュールメモ" %></th>
+        <td><%= f.text_area :memo %></td>
+    </tr>
+</table>
+<div>
+    <ul>
+        <li>
+            <%= f.submit "スケジュールを新規登録する" %>
+        </li>
+        <li>
+            <%= link_to "スケジュール一覧に戻る", :users %> <%# users_hello_pathでもOK %> <%# ターミナルでrails routesを実行し、Prefixにという列に「_path」をつけたものが、各アクションへのパス(リンク)になる %>
+        </li>
+    </ul>
+</div>
+
+<%= render "shared/partialFooter" %>
+
+<% end %>
